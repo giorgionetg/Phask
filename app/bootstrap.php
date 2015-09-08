@@ -11,3 +11,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
         ),
 ));
 
+require __DIR__ . '/phask_db_config.php';
+
+require __DIR__ . '/install.php';
+
+$app['phask.job'] = $app->share(function() use ($app) {
+    return new \Giorgionetg\Phask\Provider\JobProvider($app['db']);
+});
+
+$app['phask.task'] = $app->share(function() use ($app) {
+    return new \Giorgionetg\Phask\Provider\TaskProvider($app['db']);
+});

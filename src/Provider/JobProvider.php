@@ -17,7 +17,7 @@ class JobProvider
     
     public function getOne()
     {
-        
+        return new Job();
     }
     
     public function getList()

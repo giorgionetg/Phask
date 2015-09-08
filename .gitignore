@@ -4,3 +4,4 @@
 /vendor
 /build
 /composer.lock
+/app/phask_db_config.php
